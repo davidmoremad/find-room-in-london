@@ -1,6 +1,9 @@
 # Find room in London
 
-Stupid script to list all the rooms of MyRooms.co.uk and store them in an excel where to do more exact searches/queries (their web sucks).
+Stupid script to list all rooms of https://myrooms.co.uk and https://spareroom.co.uk and store them in an excel to make your own queries (their webs sucks).
 
+### Usage
 
-Maybe in the future, if I need it, I will make a module for SpareRoom or other websites....
+```bash
+python3 find-room-in-london.py --myrooms --spareroom
+```

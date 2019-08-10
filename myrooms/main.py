@@ -1,5 +1,4 @@
 import requests
-import time
 from datetime import date
 from bs4 import BeautifulSoup
 from .room import Room
@@ -20,7 +19,6 @@ class MyRooms:
         '''
         Make request & return soup
         '''
-        time.sleep(0.5)
         url = url + self._filters
         r = requests.get(url, headers=self._HEADERS)
         if r.status_code == 200:
