@@ -1,4 +1,4 @@
-name: Find-room-in-london Application
+name: Application workflow
 
 on:
   schedule:
