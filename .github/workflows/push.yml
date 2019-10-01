@@ -1,4 +1,4 @@
-name: Application workflow
+name: Application Push Workflow
 
 on: [push]
 
