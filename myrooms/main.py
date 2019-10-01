@@ -86,7 +86,7 @@ class MyRooms:
         
         pages = int(soup.find_all('a', {"class":"page-numbers"})[-2].string)
         for i in range(1, pages + 1):
-            print('Loading... Page:%i/%i \t Rooms: %i' % (i, pages, len(rooms)))
+            print('[ ] Visited pages:%i/%i \t Rooms: %i' % (i, pages, len(rooms)))
             soup = self._get_soup(self.URL_ROOMS_PAGE % i)
             rooms.extend(self._get_rooms_info(soup))
 

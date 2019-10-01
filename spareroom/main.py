@@ -69,7 +69,7 @@ class SpareRoom:
         rooms = list()
         
         for i in range(0, 500, 10):
-            print('Loading... Searching:%i/%i \tRooms: %i' % (i+1, i+10, len(rooms)))
+            print('[ ] Visited pages:%i/%i \tRooms: %i' % (i+1, i+10, len(rooms)))
             soup = self._get_soup(self.url % i)
             rooms.extend(self._get_rooms_info(soup))
 

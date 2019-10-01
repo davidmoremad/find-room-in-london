@@ -1,1 +1,1 @@
-from main import SpareRoom
+from .main import SpareRoom

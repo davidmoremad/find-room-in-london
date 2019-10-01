@@ -19,6 +19,7 @@ def _save_results(filename, rooms):
         except Exception as e:
             pass
     f.close()
+    print('[+] Resuls saved: ./{}.csv'.format(filename))
 
 def myrooms():
     rooms = MyRooms().get_rooms()

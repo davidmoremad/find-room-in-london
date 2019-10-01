@@ -1,1 +1,1 @@
-from main import MyRooms
+from .main import MyRooms
