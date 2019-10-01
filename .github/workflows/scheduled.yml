@@ -2,7 +2,7 @@ name: Scheduled Workflow
 
 on:
   schedule:
-  - cron: 0 2 * * *
+  - cron: 0 * * * *
 
 jobs:
   build:
@@ -23,3 +23,13 @@ jobs:
       run: |
         python find-room-in-london.py myrooms
         python find-room-in-london.py spareroom
+    - name: Upload Spareroom CSV
+      uses: actions/upload-artifact@master
+      with:
+        name: spareroom-rooms.csv
+        path: ./spareroom.csv
+    - name: Upload Myrooms CSV
+      uses: actions/upload-artifact@master
+      with:
+        name: myrooms-rooms.csv
+        path: ./myrooms.csv
