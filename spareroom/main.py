@@ -39,8 +39,8 @@ class SpareRoom:
         header = room_soup.find("header", {"class":"desktop"})
         body = room_soup.find("div", {"class":"desktop"})
 
-        room.title = str(header.h1.text.strip())
-        room.desc = str(body.p.text.strip().replace('\r\n',''))
+        room.title = str(header.h1.text.strip().encode('utf-8'))
+        room.desc = str(body.p.text.strip().replace('\r\n','').encode('utf-8'))
         room.url = str(self.DOMAIN + header.a['href'])
         room.location = str(header.find("span",{"class":"listingLocation"}).text)
         room.type = str(header.find("em",{"class":"shortDescription"}).text.replace(room.location, ''))
