@@ -1,5 +1,7 @@
 # Find room in London
 
+![](https://github.com/davidmoremad/find-room-in-london/workflows/Scheduled%20Workflow/badge.svg)
+
 In my first days in London it was very tedious to spend every day consulting the 
 new rooms and apartments in the different web pages (spareroom, myrooms, etc...) 
 so I made this small script to store everything in a CSV file and thus be able to 

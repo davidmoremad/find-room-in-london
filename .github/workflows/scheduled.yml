@@ -23,12 +23,12 @@ jobs:
       run: |
         python find-room-in-london.py myrooms
         python find-room-in-london.py spareroom
-    - name: Upload Spareroom CSV
+    - name: Artifact Spareroom.csv
       uses: actions/upload-artifact@master
       with:
         name: spareroom-rooms.csv
         path: ./spareroom.csv
-    - name: Upload Myrooms CSV
+    - name: Artifact Myrooms.csv
       uses: actions/upload-artifact@master
       with:
         name: myrooms-rooms.csv
