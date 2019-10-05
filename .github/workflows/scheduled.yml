@@ -33,3 +33,7 @@ jobs:
       with:
         name: myrooms-rooms.csv
         path: ./myrooms.csv
+    - name: Push to master
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUBTOKEN }}
