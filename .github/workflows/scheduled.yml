@@ -2,7 +2,7 @@ name: Scheduled Workflow
 
 on:
   schedule:
-  - cron: '0/15 * * * *'
+  - cron: '0/5 * * * *'
 
 jobs:
   build:
@@ -34,6 +34,7 @@ jobs:
         name: myrooms-rooms.csv
         path: ./myrooms.csv
     - name: Push to master
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUBTOKEN }}
+      run: |
+        git add .
+        git commit -m "Update"
+        git push origin master
