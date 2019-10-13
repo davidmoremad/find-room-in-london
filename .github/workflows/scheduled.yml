@@ -2,7 +2,7 @@ name: Scheduled Workflow
 
 on:
   schedule:
-  - cron: '44 * * * *'
+  - cron: '51 * * * *'
 
 jobs:
   build:
@@ -25,6 +25,7 @@ jobs:
         python find-room-in-london.py spareroom
     - name: Publish files
       run: |
+        export GITHUB_TOKEN=${{ secrets.token }}
         git config --global user.name "${{ secrets.username }}"
         git config --global user.email "${{ secrets.email }}"
         git add .
