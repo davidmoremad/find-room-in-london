@@ -2,7 +2,7 @@ name: Scheduled Workflow
 
 on:
   schedule:
-  - cron: '0 * * * *'
+  - cron: '25 * * * *'
 
 jobs:
   build:
@@ -23,13 +23,10 @@ jobs:
       run: |
         python find-room-in-london.py myrooms
         python find-room-in-london.py spareroom
-    - name: Artifact Spareroom.csv
-      uses: actions/upload-artifact@master
-      with:
-        name: spareroom-rooms.csv
-        path: ./spareroom.csv
-    - name: Artifact Myrooms.csv
-      uses: actions/upload-artifact@master
-      with:
-        name: myrooms-rooms.csv
-        path: ./myrooms.csv
+    - name: Publish files
+      run: |
+        git config --global user.name "${{ secrets.username }}"
+        git config --global user.email "${{ secrets.email }}"
+        git add .
+        git ci -m "Update rooms"
+        git push origin master
