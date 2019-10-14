@@ -2,7 +2,7 @@ name: Scheduled Workflow
 
 on:
   schedule:
-  - cron: '51 * * * *'
+  - cron: '42 * * * *'
 
 jobs:
   build:
@@ -28,6 +28,9 @@ jobs:
         export GITHUB_TOKEN=${{ secrets.token }}
         git config --global user.name "${{ secrets.username }}"
         git config --global user.email "${{ secrets.email }}"
+        git clone https://github.com/davidmoremad/find-room-in-london.git
+        cp *.csv find-room-in-london/
+        cd find-room-in-london
         git add .
         git commit -m "Update rooms"
         git push origin HEAD:master
